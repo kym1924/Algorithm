@@ -35,8 +35,20 @@ public class BOJ_2606 {
 			edge.get(to).add(from);
 		}
 
-		bfs();
+		dfs(1);
+		// bfs();
 		System.out.print(result);
+	}
+
+	static void dfs(int start) {
+		visited[start] = true;
+
+		for (int i = 0; i < edge.get(start).size(); i++) {
+			if (!visited[edge.get(start).get(i)]) {
+				result++;
+				dfs(edge.get(start).get(i));
+			}
+		}
 	}
 
 	static void bfs() {
