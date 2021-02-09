@@ -20,13 +20,14 @@ public class BOJ_3273 {
 
 		Arrays.sort(arr);
 
-		int count = 0;
+		int count = 0, check = 0;
 		int left = 0, right = arr.length - 1;
 
 		while (left < right) {
 			int check = arr[left] + arr[right];
 			if (check == answer) {
 				count++;
+				left++;
 				right--;
 			} else if (check > answer) {
 				right--;
