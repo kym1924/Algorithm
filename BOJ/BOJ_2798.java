@@ -23,9 +23,7 @@ public class BOJ_2798 {
 		for (int i = 0; i < N; i++) {
 			for (int j = i + 1; j < N; j++) {
 				for (int k = j + 1; k < N; k++) {
-					if (card[i] != card[j] && card[i] != card[k] && card[j] != card[k]) {
-						result = card[i] + card[j] + card[k];
-					}
+					result = card[i] + card[j] + card[k];
 					if (result <= M && max < result) {
 						max = result;
 					}
