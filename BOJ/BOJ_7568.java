@@ -8,7 +8,7 @@ public class BOJ_7568 {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine());
 		int N = Integer.parseInt(st.nextToken());
-		int[][] people = new int[N][N];
+		int[][] people = new int[N][2];
 		int[] result = new int[N];
 
 		for (int i = 0; i < N; i++) {
