@@ -1,8 +1,8 @@
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 
 class Solution {
+
 	static class Location {
 		int x;
 		int y;
@@ -19,8 +19,8 @@ class Solution {
 		boolean[][] visited = new boolean[m][n];
 
 		Queue<Location> q = new LinkedList<>();
-		ArrayList<Integer> list = new ArrayList<>();
 
+		int count = 0;
 		int max = Integer.MIN_VALUE;
 		for (int i = 0; i < m; i++) {
 			for (int j = 0; j < n; j++) {
@@ -47,7 +47,7 @@ class Solution {
 						}
 					}
 
-					list.add(pictureSize);
+					count++;
 					if (max < pictureSize) {
 						max = pictureSize;
 					}
@@ -56,7 +56,7 @@ class Solution {
 		}
 
 		int[] answer = new int[2];
-		answer[0] = list.size();
+		answer[0] = count;
 		answer[1] = max;
 		return answer;
 	}
