@@ -22,7 +22,7 @@ public class BOJ_1806 {
 
 		while (right <= N) {
 			if (check >= S) {
-				min = Math.min(min, right - left + 1);
+				min = Math.min(min, right - left);
 				check -= arr[left++];
 			} else if (check < S) {
 				check += arr[right++];
@@ -35,5 +35,4 @@ public class BOJ_1806 {
 			System.out.print(min);
 		}
 	}
-
 }
