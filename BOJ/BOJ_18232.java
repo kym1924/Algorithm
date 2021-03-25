@@ -41,6 +41,7 @@ public class BOJ_18232 {
 			int x = Integer.parseInt(st.nextToken());
 			int y = Integer.parseInt(st.nextToken());
 			teleport.get(x).add(y);
+			teleport.get(y).add(x);
 		}
 		bfs();
 	}
@@ -57,12 +58,12 @@ public class BOJ_18232 {
 				return;
 			}
 			int prevX = now.location - 1;
-			if (prevX > 0 && prevX <= N && !visited[prevX]) {
+			if (prevX > 0 && !visited[prevX]) {
 				visited[prevX] = true;
 				q.add(new Location(prevX, now.count + 1));
 			}
 			int nextX = now.location + 1;
-			if (nextX > 0 && nextX <= N && !visited[nextX]) {
+			if (nextX <= N && !visited[nextX]) {
 				visited[nextX] = true;
 				q.add(new Location(nextX, now.count + 1));
 			}
