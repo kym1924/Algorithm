@@ -3,11 +3,11 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 public class BOJ_1038 {
-    
+
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-    	ArrayList<Long> arr = new ArrayList<>();
-        int N = Integer.parseInt(br.readLine());
+		ArrayList<Long> arr = new ArrayList<>();
+		int N = Integer.parseInt(br.readLine());
 
 		if (N > 1022) {
 			System.out.print(-1);
@@ -18,7 +18,7 @@ public class BOJ_1038 {
 			arr.add(i);
 		}
 
-		for (int i = 1; i <= N; i++) {
+		for (int i = 1; arr.size() <= N; i++) {
 			long check = arr.get(i);
 			if (check % 10 != 0) {
 				long last = check % 10;
