@@ -12,12 +12,7 @@ class Solution {
 			String[] now = temp[i].replace("{", "").split(",");
 			for (int j = 0; j < now.length; j++) {
 				int index = Integer.parseInt(now[j]);
-				if (map.get(index) != null) {
-					int count = map.get(index);
-					map.put(index, count + 1);
-				} else {
-					map.put(index, 1);
-				}
+				map.put(index, map.getOrDefault(index, 0) + 1);
 			}
 		}
 
