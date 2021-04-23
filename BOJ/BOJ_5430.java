@@ -8,7 +8,7 @@ import java.util.Collections;
 public class BOJ_5430 {
 
 	static ArrayList<Character> p = new ArrayList<>();
-	static ArrayList<Integer> intList = new ArrayList<>();
+	static ArrayList<Integer> list = new ArrayList<>();
 	static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
 	public static void main(String[] args) throws Exception {
@@ -16,7 +16,7 @@ public class BOJ_5430 {
 		int T = Integer.parseInt(br.readLine());
 
 		for (int i = 0; i < T; i++) {
-			init();
+			clear();
 
 			String[] temp = br.readLine().split("");
 			for (int j = 0; j < temp.length; j++) {
@@ -26,7 +26,7 @@ public class BOJ_5430 {
 			int n = Integer.parseInt(br.readLine());
 			String[] arr = br.readLine().replace("[", "").replace("]", "").split(",");
 			for (int j = 0; j < n; j++) {
-				intList.add(Integer.parseInt(arr[j]));
+				list.add(Integer.parseInt(arr[j]));
 			}
 			ac();
 		}
@@ -34,9 +34,9 @@ public class BOJ_5430 {
 		bw.close();
 	}
 
-	static void init() {
+	static void clear() {
 		p.clear();
-		intList.clear();
+		list.clear();
 	}
 
 	static void ac() throws Exception {
@@ -47,11 +47,11 @@ public class BOJ_5430 {
 			if (now == 'R') {
 				reverse = !reverse;
 			} else if (now == 'D') {
-				if (intList.size() != 0) {
+				if (list.size() != 0) {
 					if (!reverse) {
-						intList.remove(0);
+						list.remove(0);
 					} else {
-						intList.remove(intList.size() - 1);
+						list.remove(list.size() - 1);
 					}
 				} else {
 					success = false;
@@ -66,11 +66,11 @@ public class BOJ_5430 {
 		if (success) {
 			bw.write("[");
 			if (reverse) {
-				Collections.reverse(intList);
+				Collections.reverse(list);
 			}
-			for (int i = 0; i < intList.size(); i++) {
-				bw.write(String.valueOf(intList.get(i)));
-				if (i != intList.size() - 1) {
+			for (int i = 0; i < list.size(); i++) {
+				bw.write(String.valueOf(list.get(i)));
+				if (i != list.size() - 1) {
 					bw.write(",");
 				}
 			}
