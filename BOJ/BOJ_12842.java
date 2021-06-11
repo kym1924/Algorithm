@@ -6,7 +6,7 @@ public class BOJ_12842 {
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		String[] temp = br.readLine().split(" ");
-        int n = Integer.parseInt(temp[0]);
+        	int n = Integer.parseInt(temp[0]);
 		int s = Integer.parseInt(temp[1]);
 
 		int m = Integer.parseInt(br.readLine());
